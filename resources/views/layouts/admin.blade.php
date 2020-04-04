@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
 </head>
@@ -30,7 +30,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
@@ -62,7 +62,12 @@
                 <span>{{ __('Profile') }}</span>
             </a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('produk.index') }}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>{{ __('Produk') }}</span>
+            </a>
+        </li>
 
 
         <!-- Divider -->
@@ -154,7 +159,7 @@
             <div class="container-fluid">
 
                 @yield('main-content')
-
+             
             </div>
             <!-- /.container-fluid -->
 
@@ -208,5 +213,8 @@
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
+   @stack('scripts')
 </body>
 </html>
